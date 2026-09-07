@@ -3,20 +3,26 @@ const siteFooter = document.getElementById('site-footer');
 
 if (siteHeader) {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const pagePrefix = window.location.pathname.includes('/view/') ? '' : 'view/';
+  const homeLink = window.location.pathname.includes('/view/') ? '../index.html' : 'index.html';
   const navigationLinks = [
-    ['blog.html', 'Blog'],
-    ['stories.html', 'Stories'],
-    ['projects.html', 'Projects'],
-    ['about.html', 'About']
+    [`${pagePrefix}blog.html`, 'Blog'],
+    [`${pagePrefix}stories.html`, 'Stories'],
+    [`${pagePrefix}projects.html`, 'Projects'],
+    [`${pagePrefix}about.html`, 'About']
   ];
 
   siteHeader.outerHTML = `
     <header>
-      <a href="index.html" class="brand">Bhumiit</a>
+      <a href="${homeLink}" class="brand">Bhumiit</a>
       <nav>
-        ${navigationLinks.map(([href, label]) => `
-          <a href="${href}"${(currentPage === href || (href === 'blog.html' && currentPage.startsWith('blog-'))) ? ' class="active"' : ''}>${label}</a>
-        `).join('')}
+        ${navigationLinks.map(([href, label]) => {
+          const linkPage = href.split('/').pop();
+          const isBlogPage = linkPage === 'blog.html' && (currentPage.startsWith('blog-') || currentPage === 'resume.html');
+          return `
+          <a href="${href}"${(currentPage === linkPage || isBlogPage) ? ' class="active"' : ''}>${label}</a>
+        `;
+        }).join('')}
         <button id="theme-toggle" aria-label="Toggle theme">Light</button>
       </nav>
     </header>
