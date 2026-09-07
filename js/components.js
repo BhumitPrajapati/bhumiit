@@ -19,8 +19,9 @@ if (siteHeader) {
         ${navigationLinks.map(([href, label]) => {
           const linkPage = href.split('/').pop();
           const isBlogPage = linkPage === 'blog.html' && (currentPage.startsWith('blog-') || currentPage === 'resume.html');
+          const isStoriesPage = linkPage === 'stories.html' && currentPage.startsWith('story-');
           return `
-          <a href="${href}"${(currentPage === linkPage || isBlogPage) ? ' class="active"' : ''}>${label}</a>
+          <a href="${href}"${(currentPage === linkPage || isBlogPage || isStoriesPage) ? ' class="active"' : ''}>${label}</a>
         `;
         }).join('')}
         <button id="theme-toggle" aria-label="Toggle theme">Light</button>
