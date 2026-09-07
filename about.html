@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Your Name</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/about.css">
+</head>
+
+<body data-theme="dark">
+
+  <canvas id="bg-canvas"></canvas>
+
+  <div id="site-header"></div>
+
+  <main>
+    <div class="about-hero">
+      <span class="page-eyebrow">About</span>
+      <h1 class="about-name">Your Name</h1>
+      <p class="about-role">
+        A short line about who you are and what kind of work you do.
+      </p>
+    </div>
+
+    <div class="code-block" id="code-block"><span id="code-typed"></span><span class="code-cursor"
+        id="code-cursor"></span><span class="code-success" id="code-success">✔ Type-check complete. Profile
+        exported.</span></div>
+    <template id="code-source">
+      <span class="kw">const</span> profile<span class="kw">:</span> Engineer <span class="kw">=</span> {
+
+      <span class="com">// core stack</span>
+      frontend: [<span class="str">'React'</span>, <span class="str">'TypeScript'</span>, <span
+        class="str">'Next.js'</span>],
+
+      <span class="com">// other tools</span>
+      tooling: [<span class="str">'Tailwind'</span>, <span class="str">'Figma'</span>],
+
+      status: <span class="str">'Open to collaborate'</span>,
+      };</template>
+
+    <div class="contact-title">Get in touch</div>
+    <div class="contact-links">
+      <a href="#">GitHub</a>
+      <a href="#">Twitter / X</a>
+      <a href="#">Email</a>
+      <a href="#">RSS</a>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/grid-bg.js"></script>
+  <script src="js/typewriter.js"></script>
+</body>
+
+</html>
