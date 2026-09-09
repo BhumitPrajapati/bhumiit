@@ -20,8 +20,9 @@ if (siteHeader) {
           const linkPage = href.split('/').pop();
           const isBlogPage = linkPage === 'blog.html' && (currentPage.startsWith('blog-') || currentPage === 'resume.html');
           const isStoriesPage = linkPage === 'stories.html' && currentPage.startsWith('story-');
+          const isProjectsPage = linkPage === 'projects.html' && currentPage.startsWith('project-');
           return `
-          <a href="${href}"${(currentPage === linkPage || isBlogPage || isStoriesPage) ? ' class="active"' : ''}>${label}</a>
+          <a href="${href}"${(currentPage === linkPage || isBlogPage || isStoriesPage || isProjectsPage) ? ' class="active"' : ''}>${label}</a>
         `;
         }).join('')}
         <button id="theme-toggle" aria-label="Toggle theme">Light</button>
