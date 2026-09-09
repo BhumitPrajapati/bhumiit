@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connecting systems that were never designed to connect — Bhumiit</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/article.css">
+</head>
+<body data-theme="dark">
+  <canvas id="bg-canvas"></canvas>
+
+  <div id="site-header"></div>
+
+  <main class="article-page">
+    <a class="article-back" href="blog.html">&larr; Back to blog</a>
+
+    <article>
+      <div class="article-header">
+        <div class="page-eyebrow">Engineering</div>
+        <h1>Connecting systems that were never designed to connect</h1>
+        <p class="article-intro">The practical lessons I keep relearning while building integrations, APIs, and data pipelines between independent systems.</p>
+        <div class="article-meta">
+          <span>September 1, 2026</span>
+          <span>5 min read</span>
+          <span>Updated September 1, 2026</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">backend</span>
+          <span class="tag">integrations</span>
+          <span class="tag">architecture</span>
+        </div>
+      </div>
+
+      <aside class="article-toc" aria-label="Table of contents">
+        <span>Table of contents</span>
+        <a href="#contracts">Start with contracts</a>
+        <a href="#failures">Design for failure</a>
+        <a href="#observability">Make the invisible visible</a>
+        <a href="#conclusion">The useful boundary</a>
+      </aside>
+
+      <div class="article-content">
+        <p>Connecting two systems is rarely a matter of sending data from point A to point B. The difficult part is agreeing on what the data means, what happens when one side is unavailable, and how a person can understand the result later.</p>
+
+        <h2 id="contracts">Start with contracts</h2>
+        <p>An integration becomes easier to reason about when its contract is explicit. Define the shape of every request and response, the required fields, the allowed states, and which system owns each piece of information.</p>
+        <p>This contract is more than documentation. It is a boundary that lets each system evolve without silently changing the meaning of the other system's data.</p>
+
+        <pre><code>POST /orders/:id/sync
+
+{
+  "orderId": "ord_123",
+  "status": "ready",
+  "updatedAt": "2026-09-01T10:30:00Z"
+}</code></pre>
+
+        <h2 id="failures">Design for failure</h2>
+        <p>Networks fail, credentials expire, rate limits appear, and third-party responses change. A reliable pipeline treats these events as normal states rather than exceptional surprises.</p>
+        <p>Retries should be deliberate and bounded. Operations should be idempotent where possible, so repeating a request does not create duplicate work. When a message cannot be processed, it should become visible in a retry queue or dead-letter flow instead of disappearing into a log file.</p>
+
+        <h2 id="observability">Make the invisible visible</h2>
+        <p>When someone asks why a record is missing, the answer should not require guessing. Give each operation a correlation ID and carry it through requests, jobs, database writes, and error reports.</p>
+        <p>Useful observability is not a wall of logs. It is a small set of signals that answers three questions quickly: what happened, where did it stop, and can it be safely run again?</p>
+
+        <h2 id="conclusion">The useful boundary</h2>
+        <p>The best integration boundary is one that makes both systems simpler. It keeps ownership clear, gives failures a place to go, and leaves enough evidence for the next person to understand the journey of a piece of data.</p>
+        <p>That is the part I now look for first: not just whether two APIs can communicate, but whether the boundary between them can be trusted.</p>
+      </div>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/components.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/grid-bg.js"></script>
+</body>
+</html>

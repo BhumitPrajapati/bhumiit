@@ -1,0 +1,49 @@
+.about-hero{
+  display:flex;flex-direction:column;gap:6px;margin-bottom:40px;
+  opacity:0;animation:fadeUp .6s ease .1s forwards;
+}
+.about-name{
+  font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-0.03em;
+}
+.about-role{font-size:16px;color:var(--text-dim);max-width:56ch;}
+
+.code-block{
+  font-family:var(--mono);font-size:13px;line-height:1.7;
+  background:var(--bg-elevated);border:1px solid var(--border);
+  border-radius:8px;padding:24px;overflow-x:auto;margin-bottom:40px;
+  opacity:0;animation:fadeIn .4s ease forwards;
+  white-space:pre-wrap;
+}
+@keyframes fadeIn{ to{opacity:1;} }
+.code-block .kw{color:#c586c0;}
+.code-block .str{color:var(--accent);}
+.code-block .com{color:var(--text-dim);}
+
+.code-cursor{
+  display:inline-block;width:7px;height:14px;background:var(--accent);
+  margin-left:1px;vertical-align:middle;
+  animation:blink 1s step-end infinite;
+}
+@keyframes blink{ 50%{opacity:0;} }
+
+.code-success{
+  color:var(--accent);opacity:0;font-family:var(--mono);font-size:13px;
+  margin-top:10px;display:block;
+}
+.code-success.show{
+  animation:fadeUp .5s ease forwards;
+}
+
+.contact-title{
+  font-family:var(--mono);font-size:13px;color:var(--text-dim);margin-bottom:16px;
+  opacity:0;animation:fadeUp .7s ease .4s forwards;
+}
+.contact-links{
+  display:flex;gap:14px;flex-wrap:wrap;
+  opacity:0;animation:fadeUp .7s ease .5s forwards;
+}
+.contact-links a{
+  font-size:14px;padding:8px 14px;border:1px solid var(--border);border-radius:6px;
+  transition:border-color .2s ease, color .2s ease;
+}
+.contact-links a:hover{border-color:var(--accent);color:var(--accent);}
