@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriGain — Bhumiit</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/article.css">
+  <link rel="stylesheet" href="../css/project.css">
+</head>
+<body data-theme="dark">
+  <canvas id="bg-canvas"></canvas>
+
+  <div id="site-header"></div>
+
+  <main class="article-page project-page">
+    <a class="article-back" href="projects.html">&larr; Back to projects</a>
+
+    <article>
+      <div class="article-header">
+        <div class="page-eyebrow">Live product case study</div>
+        <h1>NutriGain</h1>
+        <p class="article-intro">A practical nutrition and muscle-gain tracker that turns personal body data into daily calorie, protein, macro, and hydration targets.</p>
+        <div class="project-actions">
+          <a class="project-live-link" href="https://nutrigain.onrender.com/" target="_blank" rel="noopener noreferrer">Visit live website &rarr;</a>
+        </div>
+        <div class="article-meta">
+          <span>Nutrition tracking</span>
+          <span>Fitness product</span>
+          <span>Web application</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">Calorie tracking</span>
+          <span class="tag">Macro planning</span>
+          <span class="tag">Food logging</span>
+          <span class="tag">Hydration</span>
+        </div>
+      </div>
+
+      <aside class="article-toc" aria-label="Project sections">
+        <span>Project sections</span>
+        <a href="#overview">Overview</a>
+        <a href="#experience">User experience</a>
+        <a href="#features">Features</a>
+        <a href="#stack">Product details</a>
+      </aside>
+
+      <div class="article-content">
+        <h2 id="overview">Overview</h2>
+        <p>NutriGain helps people who are trying to build muscle make better daily eating decisions. Instead of relying on a generic meal plan, users enter their body details, activity level, preferred gain pace, food preferences, and foods they want to avoid.</p>
+        <p>The app uses that information to calculate a personal maintenance baseline and gain target, then keeps the user focused on what remains for the day. An account can save the profile and logs to a database for access across devices, while device-only use is also available.</p>
+
+        <h2 id="experience">User experience</h2>
+        <div class="project-diagram" aria-label="NutriGain user flow">
+          <span>Personal profile</span>
+          <b>&rarr;</b>
+          <span>Daily targets</span>
+          <b>&rarr;</b>
+          <span>Food and progress logs</span>
+          <b>&rarr;</b>
+          <span>Actionable suggestions</span>
+        </div>
+        <p>The experience is organized around the current day. A quick dashboard shows calories, protein, carbohydrates, and fat against the user&rsquo;s targets. Food is logged by weight in grams, with serving shortcuts and precise nutrition values to make repeat entries easier.</p>
+        <p>As the day changes, the app explains what is still needed and suggests combinations of foods that help close the remaining nutrition gap. This makes the next action clear instead of leaving the user to interpret a collection of numbers.</p>
+
+        <h2 id="features">Features</h2>
+        <div class="project-features">
+          <section>
+            <h3>Personalized targets</h3>
+            <p>Calculates BMR, maintenance calories, gain calories, protein, carbs, fat, fiber, and water from the user profile and activity level.</p>
+          </section>
+          <section>
+            <h3>Precise food logging</h3>
+            <p>Tracks food by the gram and records calories and macros, with quick controls for common weight changes and serving sizes.</p>
+          </section>
+          <section>
+            <h3>Helpful suggestions</h3>
+            <p>Recommends food combinations based on what remains in the daily target and nutrients that may be running low.</p>
+          </section>
+          <section>
+            <h3>Flexible preferences</h3>
+            <p>Supports anything, vegetarian, and vegan suggestions, plus exclusions for common allergies and dislikes.</p>
+          </section>
+          <section>
+            <h3>Complete daily tracking</h3>
+            <p>Records meals, body weight, water, supplements, and other progress signals from one Today dashboard.</p>
+          </section>
+          <section>
+            <h3>Saved personal data</h3>
+            <p>Offers local device use and optional sign-in so profiles and food logs can follow the user across devices.</p>
+          </section>
+        </div>
+
+        <h2 id="stack">Product details</h2>
+        <div class="project-stack">
+          <span>BMR and TDEE</span>
+          <span>Calories</span>
+          <span>Protein</span>
+          <span>Carbohydrates</span>
+          <span>Fat</span>
+          <span>Fiber</span>
+          <span>Water</span>
+          <span>Food database</span>
+          <span>Account sync</span>
+        </div>
+
+        <p class="article-closing">NutriGain is designed to close the gap between knowing a nutrition goal and knowing exactly what to do next.</p>
+      </div>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/components.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/grid-bg.js"></script>
+</body>
+</html>
